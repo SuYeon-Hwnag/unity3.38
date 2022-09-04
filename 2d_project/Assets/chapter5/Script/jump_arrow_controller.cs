@@ -5,7 +5,6 @@ using UnityEngine;
 public class jump_arrow_controller : MonoBehaviour
 {
     GameObject player;
-    // public bool stiffness = false;
     float arrowspped = -0.02f;
 
     // Start is called before the first frame update
@@ -17,7 +16,7 @@ public class jump_arrow_controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // 프레임마다 등속으로 낙하시킨다.
+        // 프레임마다 가속 낙하시킨다.
         gameObject.transform.Translate(0, arrowspped, 0);
         arrowspped *= 1.004f;
 
