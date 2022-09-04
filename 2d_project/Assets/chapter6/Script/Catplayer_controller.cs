@@ -23,6 +23,12 @@ public class Catplayer_controller : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Space) && rigid2D.velocity.y == 0)
         {
             rigid2D.AddForce(transform.up * jumpForce);
+            animator.SetTrigger("JumpTrigger");
+            animator.SetBool("JumpTrigger", true);
+        }
+        else
+        {
+            animator.SetBool("JumpTrigger", false);
         }
 
         // 좌우 이동
@@ -51,9 +57,16 @@ public class Catplayer_controller : MonoBehaviour
             transform.localScale = new Vector3(key, 1, 1);
         }
 
-        // 플레이어 속도에 맞춰 애니메이션 속도 변경
-        animator.speed = speedx / 2.0f;
+        if(rigid2D.velocity.y ==0)
+        {
+            // 플레이어 속도에 맞춰 애니메이션 속도 변경
+            animator.speed = speedx / 2.0f;
+        }
 
+        else
+        {
+            animator.speed = 1.0f;
+        }
         // 플레이어가 화면 밖으로 나갔다면 처음부터
         if(transform.position.y<-10)
         {
