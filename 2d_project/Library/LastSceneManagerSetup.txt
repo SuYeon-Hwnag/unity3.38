@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/rhythm/Scene/GameScene.unity
+- path: Assets/rhythm/Scene/firstscece.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

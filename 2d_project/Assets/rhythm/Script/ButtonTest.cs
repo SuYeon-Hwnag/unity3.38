@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class ButtonTest : MonoBehaviour
 {
+    public bool start = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +22,7 @@ public class ButtonTest : MonoBehaviour
     {
         Debug.Log("test");
         SceneManager.LoadScene("GameScene");
-
+        start = true;
     }
 
 
