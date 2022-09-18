@@ -17,6 +17,7 @@ public class UI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // if(ArrowGenerator<-5.8)
     }
     public void DecreaseHp()
     {

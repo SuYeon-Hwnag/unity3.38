@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class ArrowGenerator : MonoBehaviour
 {
-    public GameObject arrow_prefab;
-    float span = 1.0f;
-    float delta = 0;
+    public List<GameObject> arrowList;
+    public List<float> genTiming; // 생성 시간
+    public List<float> genDir; // 생성 방향
 
+    int genCount = 0;
+    float deltaTime = 0.0f;
+    public bool isStart = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,13 +20,31 @@ public class ArrowGenerator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        this.delta += Time.deltaTime;
-        if(this.delta>this.span)
-        {
-            this.delta = 0;
-            GameObject gameObject = Instantiate(arrow_prefab) as GameObject;
-            int px = Random.Range(-2, 2);
-            gameObject.transform.position = new Vector3(px, 5, 0); // 정해진 위치에서 랜덤 생성
-        }
+ 
+            if (genTiming.Count <= genCount)
+            {
+                return;
+            }
+
+            deltaTime += Time.deltaTime;
+
+            if (deltaTime > genTiming[genCount])
+            {
+                deltaTime = 0;
+                genCount = Random.Range(0, 3);
+                GenArrow(genDir[genCount]);
+                genCount++;
+                //GameObject gameObject = Instantiate(arrow_prefab) as GameObject;
+                // int px = Random.Range(-2, 2);
+                //gameObject.transform.position = new Vector3(px, 5, 0); // 정해진 위치에서 랜덤 생성
+            }
+
+
     }
+
+    public void GenArrow(float number)
+    {
+        Instantiate(arrowList[(int)number]);
+    }
+
 }

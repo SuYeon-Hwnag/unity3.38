@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class ButtonTest : MonoBehaviour
 {
     public bool start = false;
+    public AudioSource audiosource;
 
     // Start is called before the first frame update
     void Start()
@@ -20,8 +21,8 @@ public class ButtonTest : MonoBehaviour
     }
     public void BtnTestFunction()
     {
-        Debug.Log("test");
         SceneManager.LoadScene("GameScene");
+        audiosource.Play();
         start = true;
     }
 
