@@ -8,13 +8,19 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 1
+  - enabled: 0
     path: Assets/rhythm/Scene/firstscece.unity
     guid: 85f203aa529da0f4c8be3e076b8f1faa
-  - enabled: 1
+  - enabled: 0
     path: Assets/rhythm/Scene/GameScene.unity
     guid: 22861d0c955fe894f969c43d0b23855b
-  - enabled: 1
+  - enabled: 0
     path: Assets/rhythm/Scene/EndScene.unity
     guid: 486036cd655f9ff43bfdbf77da35d4de
+  - enabled: 1
+    path: Assets/chapter8/Scenes/MenuScene.unity
+    guid: 51faece6729f41042b43095f295f5e50
+  - enabled: 1
+    path: Assets/chapter8/Scenes/MainScene.unity
+    guid: 910db4a589cae4840964591bc3d6cbdf
   m_configObjects: {}
